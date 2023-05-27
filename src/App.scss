@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: white;
+    color: #001524;
+    --def: #96b7c4;
+    --inv: #fff;
+}
+
+body.style1::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ee7752, #de6694, #23a6d5, #23d5ab,rgb(200, 200, 170),rgb(202, 202, 154));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    z-index: -1;}
+
+body.style2::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #552C50;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23552C50' cx='50' cy='0' r='50'/%3E%3Cg fill='%235c2a59' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23632862' cx='50' cy='100' r='50'/%3E%3Cg fill='%2369256a' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23702373' cx='50' cy='200' r='50'/%3E%3Cg fill='%2377217c' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%237e1f85' cx='50' cy='300' r='50'/%3E%3Cg fill='%23851d8d' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%238b1a96' cx='50' cy='400' r='50'/%3E%3Cg fill='%2392189f' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%239916a8' cx='50' cy='500' r='50'/%3E%3Cg fill='%23a014b0' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a712b9' cx='50' cy='600' r='50'/%3E%3Cg fill='%23ad0fc2' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b40dcb' cx='50' cy='700' r='50'/%3E%3Cg fill='%23bb0bd3' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c209dc' cx='50' cy='800' r='50'/%3E%3Cg fill='%23c907e5' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23cf04ee' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d602f6' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23D0F' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    animation: gradient 15s ease infinite;
+    background-size: contain;
+    z-index: -1;}
+
+@keyframes gradient {
+    0% {
+    background-position: 0% 50%;
+    }
+    
+    50% {
+    background-position: 100% 50%;
+    }
+    
+    100% {
+    background-position: 0% 50%;
+    }
+    }
+
+.logo:hover{
+    cursor: pointer;
+}
+
+h1 {
+    font-style: italic;
+}
+
+.Content {
+    margin: 0 1rem;
+    .allAnswers {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .answerBtns {
+            background: transparent;
+            font-size: 20px;
+            padding: 2em;
+            border: 2px solid white;
+            color: white;
+        }
+        .answerBtns:hover {
+            color: black;
+            border: 2px solid black;
+            
+        }
+    }
+}
+
+.nav {
+    // https://gradients.shecodes.io/gradients/598
+    // background: linear-gradient(109.6deg, rgb(157, 75, 199) 11.2%, rgb(119, 81, 204) 83.1%);
+    // background-color: #7209b7;
+    color: #FEFCFF;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1rem;
+    div {
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+        gap: 1rem;
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 2rem;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+        height: 100%;
+        align-items: center;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+    }
+    li:hover {
+        // background-color: rgb(213, 165, 230);
+        color: black;
+        border-radius: 10%;
+    }
+    li.active {
+        background-color: #555;
+        border-radius: 10%;
+    }
+}
