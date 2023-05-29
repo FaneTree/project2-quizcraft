@@ -1,61 +1,67 @@
-# 10-02-2023
-## Start the project
-1. routine React cleanup  
-2. ISSUE: GitHub and Modules Ignored
-   - run `npm install modules` to install the modules locally 
-3. `Users.jsx` component created for authentication
-4. `Routes` added 
-   - 'App.js' ; 'index.js' 
-5. Firebase set up
-   - `Login` connected successfully
-   - `Sign Up` connected successfully
+<a href="https://quizcraft-c8706.web.app/">
+    <img src="./public/readme1.png" alt="QuizCraft logo" title="QuizCraft" align="right" height="50" />
+</a>
 
-# 12-02-2023
-1. routes cleaned up 
-   - Home added to routes
-   - Contents only displayed after the click of a button 
-2. Game component created
-```mermaid
-flowchart TD
-   Games --> Scores 
-   Games --> Consoles 
-```
-   - Parent component: Games 
-     - callback function: api; clicked answers; score calculation 
-   - Child components:
-     - Console: display each question 
-     - Scores: display the score of the game
-3. Anonymous login added 
-4. Log out added to the Home 
-5. `npm i react-firebase-hooks` for the manipulation of Firebase usercredentials 
-6. `npm install --save react-dropdown-select` for dropdown selection
+# :left_speech_bubble: QuizCraft
 
-# 13-02-2023
-1. To display a question at a time 
-    ```mermaid 
-   flowchart TD
-   parent[Quizs] --> child1[Game Board]
-   parent --> child2[Consoles]
-    ```
-   - Parent component: 1) talk to API 2) store all questions in the state]
-   - Child component: 1) receive all the questions in the sate 2) have a current variable in the state to display one question at e]
+Get ready for an exhilarating adventure of knowledge and excitement with [QuizCraft](https://quizcraft-c8706.web.app/), the ultimate multiplayer quiz game. Challenge your friends across various topics, prove your trivia prowess, and create unforgettable memories. Play now and embark on the journey of a lifetime!
 
-# 14-02-2023
-1. Realtime Database setup in Firebase 
-    ```
-    {
-        "rules": {
-        ".read": "now < 1678885200000",  // 2023-3-16
-        ".write": "now < 1678885200000",  // 2023-3-16
-        "players":{
-        "$uid":{
-        ".write":"auth != null && auth.uid == $uid", // only the player in session can write
-        "score":{
-        ".write":"auth != null && auth.uid == $uid" // only the player in session can write
-        }
-        }
-        }
-        }
-        }
+### How it works
+- Create a room to play with friends by sending the room id to the friends to join.
+- Chat room also required room id to enter.
+- The host is the one who clicks to change the question when ready.
 
-   ```
+## About this project
+- Group project with 4 people to collaborate and submit within 5 days including 1 day presentation.
+
+## Built with
+- React.js
+- HTML
+- CSS/SCSS
+- Firebase
+- Deployed on Firebase
+
+### Snapshots
+|Quiz|
+|:-:|
+|<img src="./public/quiz.png" border="0"/>|
+|Chatroom|
+|<img src="./public/chat.png" border="0"/>|
+|Create Quiz|
+|<img src="./public/create.png" border="0"/>|
+
+---
+
+## :bell: Putting it all together
+
+### :bulb: Features:
+- Multiplayer trivia game that can be played together at the same time.
+- Score summary at the end of the game.
+- Different interface for the host and players.
+- Chatroom for the game.
+- Single-player mode which changes the color when answering (Red for wrong and green for right answer).
+- Question from Trivia API.
+- Store players, host, chats, and trivia on Firebase.
+
+### :spiral_calendar: Challenges:
+- Multiplayer game concept to work on Firebase as we have to decide between a real-time database vs Firestore and eventually we chose Firestore as it met the needs and it is much simpler to set up.
+- React component design and planning were challenging as we kept redesigning multiple times.
+   - We misunderstood the React parent/child component concept as we tried to make one parent as a brain to deal with all child components in one layer (get data from the child component and pass it to the other child component) which did not work for this concept.
+   - Therefore, we finalise the concept again as below:
+
+|Concept|Draft|
+|:-:|:-:|
+|<img src="./public/concept1.jpg" border="0"/> | <img src="./public/concept2.jpg" border="0"/>|
+
+### :book: Lessons:
+- Multiplayer is not like we expected in our heads. It is like getting/updating all data and visualise it in one go.
+- Design NoSQL on Firebase was confusing but after you have tried to set it up, you will understand the way to structure it and how to deal with it.
+- It is convenient to setup user login and signup using Firebase.
+
+### :bookmark: Future updates:
+- Countdown time within the question and force quiz change after it ends.
+- Fix all CSS and make it mobile-friendly.
+- Fix multiplayer answer to change the colour for the choices and also show scores during the game for the player.
+- Add score summary and ranking within the quiz change phase.
+- Add score summary page for single player.
+- Remove all chat history when the room has been removed or the game end.
